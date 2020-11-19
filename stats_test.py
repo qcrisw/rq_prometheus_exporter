@@ -14,5 +14,5 @@ def test_stat_scrape():
     worker.register_birth()
 
     jobs, workers = stats.scrape()
-    assert jobs == [{"queue_name": "echo", "size": 2}]
+    assert jobs == [{"queue_name": "echo", "size": 2}, {"queue_name": "echo-failed", "size": 0}]
     assert workers == [{"name": "test_worker", "queues": "searches,test", "state": "?"}]
